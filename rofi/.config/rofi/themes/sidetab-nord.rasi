@@ -1,0 +1,87 @@
+* {
+    /* Color Palette - One Dark Inspired */
+    background:     #1e222a;
+    background-alt: #252931;
+    foreground:     #E5E9F0;
+    selected:       #3d4451;
+    accent:         #61afef;
+    grey:           #565c64;
+    
+    /* Global Properties */
+    spacing: 0;
+    width: 30em;
+    margin: 0;
+    padding: 0;
+}
+
+#window {
+    background-color: @background;
+    border: 0;
+    padding: 0;
+    location: west;
+    anchor: west;
+    height: 100%;
+}
+
+#mainbox {
+    background-color: @background;
+    children: [inputbar, listview];
+    spacing: -10px;
+}
+
+#inputbar {
+    children: [prompt, entry];
+    background-color: @background-alt;
+    padding: 10px;
+    /* Adding a small border bottom for separation */
+    border: 0 0 2px 0;
+    border-color: @background;
+}
+
+#prompt {
+    font: "MesloLGS NF 15"; 
+    background-color: inherit;
+    text-color: @accent; /* Accent color makes the icon pop */
+    padding: 0 30px 0 5px;
+}
+
+#entry {
+    font: "Sora Regular 15";
+    background-color: inherit;
+    text-color: @foreground;
+    placeholder: "Search...";
+    placeholder-color: @grey;
+}
+
+#listview {
+    background-color: @background;
+    fixed-height: true;
+    margin: 10px 0;
+    padding: 0 5px;
+    lines: 15; /* Limits number of items shown */
+}
+
+#element {
+    padding: 10px;
+    margin: 2px 10px;
+    border-radius: 6px; /* Rounded corners for modern look */
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: @selected;
+    text-color: @accent; /* Highlighted text color change */
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    background-color: inherit;
+    margin: 0 12px 0 0;
+    size: 20px;
+}

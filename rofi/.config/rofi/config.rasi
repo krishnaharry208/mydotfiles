@@ -1,0 +1,12 @@
+/** Basic config file **/
+
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  /* Updated icons to standard Nerd Font v3 codepoints */
+  display-drun: "";    /* Search/App Grid icon */
+  display-window: "󱂬";  /* Window icon */
+  display-combi: "center";   /* Combi icon */
+}
+
+@theme "themes/sidetab-nord.rasi"

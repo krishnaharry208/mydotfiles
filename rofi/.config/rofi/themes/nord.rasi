@@ -1,0 +1,114 @@
+/*******************************************************************************
+ * ULTRA-CLEAN JETBRAINS MONO FLOATING SIDEBAR
+ *******************************************************************************/
+
+* {
+    /* Color Palette - Deeper One Dark */
+    bg:          #1e222a;
+    bg-alt:      #282c34;
+    fg:          #abb2bf;
+    accent:      #61afef;
+    selected:    #353b45;
+    grey:        #5c6370;
+    
+    /* Font - Optimized for JetBrains Mono */
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    width:            380px;
+    height:           100%;
+    location:         west;
+    anchor:           west;
+    background-color: @bg;
+    /* Removed the side border as requested */
+    border:           0px;
+}
+
+mainbox {
+    background-color: transparent;
+    children:         [ inputbar, listview ];
+    spacing:          20px;
+    padding:          30px 15px;
+}
+
+inputbar {
+    enabled:          true;
+    spacing:          10px;
+    padding:          15px;
+    border-radius:    12px;
+    background-color: @bg-alt;
+    children:         [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font 16"; /* Bigger icon/prompt */
+}
+
+entry {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @fg;
+    cursor:           text;
+    placeholder:      "Type to search...";
+    placeholder-color: @grey;
+    font:             "JetBrainsMono Nerd Font 12";
+}
+
+listview {
+    enabled:          true;
+    columns:          1;
+    lines:            12;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+    
+    spacing:          8px;
+    background-color: transparent;
+}
+
+element {
+    enabled:          true;
+    spacing:          15px;
+    padding:          12px;
+    border-radius:    12px;
+    background-color: transparent;
+    text-color:       @fg;
+    cursor:           pointer;
+}
+
+/* The "Beautiful" Selection: Subtle glow and lift */
+element selected {
+    background-color: @selected;
+    text-color:       @accent;
+    /* Using a subtle bottom border for depth instead of a side line */
+    border:           0px 0px 2px 0px;
+    border-color:     @accent;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+    size:             32px;
+    cursor:           inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
+
+/* Subtle scroll animations feel */
+#listview {
+    border: 0px;
+}
